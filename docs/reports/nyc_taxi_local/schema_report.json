@@ -1,0 +1,57 @@
+{
+  "generated_at_utc": "2026-03-08T13:02:54.386673+00:00",
+  "input_path": "data/raw/nyc_taxi",
+  "dataset_variant": "yellow",
+  "pickup_timestamp_column": "tpep_pickup_datetime",
+  "file_count": 1,
+  "total_rows": 3,
+  "total_size_bytes": 3137,
+  "total_size_mb": 0.0,
+  "schema": [
+    {
+      "name": "tpep_pickup_datetime",
+      "type": "string"
+    },
+    {
+      "name": "passenger_count",
+      "type": "int64"
+    },
+    {
+      "name": "total_amount",
+      "type": "double"
+    },
+    {
+      "name": "trip_distance",
+      "type": "double"
+    }
+  ],
+  "recommended_columns": [
+    {
+      "role": "pickup_timestamp",
+      "column": "tpep_pickup_datetime",
+      "reason": "시간대별 승차 패턴 분석 기준 시각"
+    },
+    {
+      "role": "passenger_count",
+      "column": "passenger_count",
+      "reason": "수요 강도와 탑승 인원 분석"
+    },
+    {
+      "role": "trip_distance",
+      "column": "trip_distance",
+      "reason": "거리별 수익/수요 패턴 분석"
+    },
+    {
+      "role": "total_amount",
+      "column": "total_amount",
+      "reason": "총 매출 집계"
+    }
+  ],
+  "files": [
+    {
+      "path": "data/raw/nyc_taxi/sample.parquet",
+      "rows": 3,
+      "size_bytes": 3137
+    }
+  ]
+}

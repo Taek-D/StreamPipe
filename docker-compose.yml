@@ -1,0 +1,69 @@
+services:
+  kafka:
+    image: apache/kafka:4.0.1
+    container_name: streampipe-kafka
+    hostname: kafka
+    ports:
+      - "9092:9092"
+    environment:
+      KAFKA_NODE_ID: 1
+      KAFKA_PROCESS_ROLES: broker,controller
+      KAFKA_CONTROLLER_LISTENER_NAMES: CONTROLLER
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT,CONTROLLER:PLAINTEXT
+      KAFKA_LISTENERS: PLAINTEXT://0.0.0.0:19092,PLAINTEXT_HOST://0.0.0.0:9092,CONTROLLER://0.0.0.0:9093
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:19092,PLAINTEXT_HOST://localhost:9092
+      KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
+      KAFKA_CONTROLLER_QUORUM_VOTERS: 1@kafka:9093
+      CLUSTER_ID: 5L6g3nShT-eMCtK--X86sw
+    healthcheck:
+      test: ["CMD-SHELL", "/opt/kafka/bin/kafka-topics.sh --bootstrap-server localhost:9092 --list >/dev/null 2>&1"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 20s
+
+  spark-master:
+    image: spark:latest
+    container_name: streampipe-spark-master
+    hostname: spark-master
+    command:
+      [
+        "/opt/spark/bin/spark-class",
+        "org.apache.spark.deploy.master.Master",
+        "--host",
+        "spark-master",
+        "--port",
+        "7077",
+        "--webui-port",
+        "8080"
+      ]
+    ports:
+      - "7077:7077"
+      - "8080:8080"
+    volumes:
+      - ./:/workspace
+
+  spark-worker:
+    image: spark:latest
+    container_name: streampipe-spark-worker
+    hostname: spark-worker
+    depends_on:
+      - spark-master
+    command:
+      [
+        "/opt/spark/bin/spark-class",
+        "org.apache.spark.deploy.worker.Worker",
+        "spark://spark-master:7077",
+        "--host",
+        "spark-worker",
+        "--webui-port",
+        "8081",
+        "--cores",
+        "2",
+        "--memory",
+        "2G"
+      ]
+    ports:
+      - "8081:8081"
+    volumes:
+      - ./:/workspace

@@ -1,0 +1,108 @@
+{
+  "report_type": "delta_migration",
+  "generated_at_utc": "2026-03-09T03:27:12.542270+00:00",
+  "source_path": "data/processed/batch_taxi_metrics_jan/summary",
+  "target_path": "data/processed/delta/day4/batch_summary_delta_example",
+  "input_rows": 1,
+  "output_rows": 1,
+  "latest_version": 0,
+  "partition_by": [],
+  "schema": [
+    {
+      "name": "row_count",
+      "type": "bigint",
+      "nullable": true
+    },
+    {
+      "name": "active_days",
+      "type": "bigint",
+      "nullable": true
+    },
+    {
+      "name": "min_pickup_ts",
+      "type": "timestamp",
+      "nullable": true
+    },
+    {
+      "name": "max_pickup_ts",
+      "type": "timestamp",
+      "nullable": true
+    },
+    {
+      "name": "avg_passenger_count",
+      "type": "double",
+      "nullable": true
+    },
+    {
+      "name": "avg_trip_distance",
+      "type": "double",
+      "nullable": true
+    },
+    {
+      "name": "active_pickup_boroughs",
+      "type": "bigint",
+      "nullable": true
+    },
+    {
+      "name": "avg_total_amount",
+      "type": "double",
+      "nullable": true
+    },
+    {
+      "name": "sum_total_amount",
+      "type": "double",
+      "nullable": true
+    },
+    {
+      "name": "sum_tip_amount",
+      "type": "double",
+      "nullable": true
+    },
+    {
+      "name": "avg_tip_pct",
+      "type": "double",
+      "nullable": true
+    }
+  ],
+  "preview_rows": [
+    {
+      "row_count": 3066728,
+      "active_days": 32,
+      "min_pickup_ts": "2023-01-01T00:00:00",
+      "max_pickup_ts": "2023-02-01T00:56:53",
+      "avg_passenger_count": 1.362534703846597,
+      "avg_trip_distance": 3.8473533974970975,
+      "active_pickup_boroughs": 8,
+      "avg_total_amount": 27.020229035565706,
+      "sum_total_amount": 82863692.94978234,
+      "sum_tip_amount": 10328488.770001551,
+      "avg_tip_pct": 21.256849873710486
+    }
+  ],
+  "history": [
+    {
+      "version": 0,
+      "timestamp": "2026-03-09T12:27:07.808000",
+      "userId": null,
+      "userName": null,
+      "operation": "WRITE",
+      "operationParameters": {
+        "mode": "Overwrite",
+        "partitionBy": "[]"
+      },
+      "job": null,
+      "notebook": null,
+      "clusterId": null,
+      "readVersion": null,
+      "isolationLevel": "Serializable",
+      "isBlindAppend": false,
+      "operationMetrics": {
+        "numOutputRows": "1",
+        "numOutputBytes": "3383",
+        "numFiles": "1"
+      },
+      "userMetadata": null,
+      "engineInfo": "Apache-Spark/3.5.8 Delta-Lake/3.3.2"
+    }
+  ]
+}

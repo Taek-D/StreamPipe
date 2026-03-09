@@ -1,0 +1,33 @@
+project:
+  name: streampipe
+  timezone: Asia/Seoul
+  owner: portfolio
+
+datasets:
+  taxi:
+    raw_path: data/raw/nyc_taxi
+    processed_path: data/processed/nyc_taxi
+  clickstream:
+    topic: clickstream.events
+    checkpoint_path: data/checkpoints/clickstream
+
+spark:
+  app_name: streampipe
+  master_url: spark://localhost:7077
+
+streaming:
+  watermark: 10 minutes
+  windows:
+    - 5 minutes
+    - 15 minutes
+    - 1 hour
+
+quality:
+  rules:
+    - no_negative_fare
+    - no_future_trip_datetime
+    - unique_event_id
+    - non_null_required_columns
+
+dashboard:
+  refresh_seconds: 5

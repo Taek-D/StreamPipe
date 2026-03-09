@@ -1,0 +1,149 @@
+{
+  "generated_at_utc": "2026-03-09T05:15:54.625086+00:00",
+  "config": {
+    "topic": "clickstream.events",
+    "query_name": "clickstream_demo",
+    "page_view_sessions": 10,
+    "add_to_cart_sessions": 6,
+    "purchase_sessions": 1
+  },
+  "scenario_summary": {
+    "generated_event_count": 27,
+    "generated_session_count": 10,
+    "generated_user_count": 10,
+    "event_type_counts": {
+      "add_to_cart": 6,
+      "page_view": 10,
+      "product_view": 10,
+      "purchase": 1
+    }
+  },
+  "timing": {
+    "publish_seconds": 0.1729,
+    "processing_seconds": 8.7496,
+    "end_to_end_seconds": 8.9225,
+    "events_per_second": 3.0261,
+    "sessions_per_second": 1.1208
+  },
+  "traffic_baseline": {
+    "lookback_window_count": 12,
+    "recent_hour_total_sessions": [
+      3,
+      4,
+      5,
+      4,
+      3,
+      4,
+      5,
+      4,
+      3,
+      4,
+      5,
+      4
+    ],
+    "mean_total_sessions": 4,
+    "stddev_total_sessions": 0.7071
+  },
+  "query_progress": [
+    {
+      "query_name": "clickstream_demo_events",
+      "batch_id": 2,
+      "num_input_rows": 0,
+      "input_rows_per_second": 0,
+      "processed_rows_per_second": 0,
+      "trigger_execution_ms": 926
+    },
+    {
+      "query_name": "clickstream_demo_funnel",
+      "batch_id": 2,
+      "num_input_rows": 0,
+      "input_rows_per_second": 0,
+      "processed_rows_per_second": 0,
+      "trigger_execution_ms": 963
+    },
+    {
+      "query_name": "clickstream_demo_anomalies",
+      "batch_id": 2,
+      "num_input_rows": 0,
+      "input_rows_per_second": 0,
+      "processed_rows_per_second": 0,
+      "trigger_execution_ms": 992
+    }
+  ],
+  "event_metrics": [
+    {
+      "window_start": "2026-03-09T14:14:00",
+      "window_end": "2026-03-09T14:16:00",
+      "event_type": "add_to_cart",
+      "event_count": 6,
+      "approx_unique_users": 6,
+      "approx_unique_sessions": 6
+    },
+    {
+      "window_start": "2026-03-09T14:14:00",
+      "window_end": "2026-03-09T14:16:00",
+      "event_type": "page_view",
+      "event_count": 10,
+      "approx_unique_users": 10,
+      "approx_unique_sessions": 10
+    },
+    {
+      "window_start": "2026-03-09T14:14:00",
+      "window_end": "2026-03-09T14:16:00",
+      "event_type": "product_view",
+      "event_count": 10,
+      "approx_unique_users": 10,
+      "approx_unique_sessions": 10
+    },
+    {
+      "window_start": "2026-03-09T14:14:00",
+      "window_end": "2026-03-09T14:16:00",
+      "event_type": "purchase",
+      "event_count": 1,
+      "approx_unique_users": 1,
+      "approx_unique_sessions": 1
+    }
+  ],
+  "funnel_metrics": [
+    {
+      "window_start": "2026-03-09T14:14:00",
+      "window_end": "2026-03-09T14:16:00",
+      "total_sessions": 10,
+      "total_users": 10,
+      "page_view_sessions": 10,
+      "product_view_sessions": 10,
+      "add_to_cart_sessions": 6,
+      "purchase_sessions": 1,
+      "page_to_product_rate": 100.0,
+      "product_to_cart_rate": 60.0,
+      "cart_to_purchase_rate": 16.666666666666664,
+      "page_to_purchase_rate": 10.0
+    }
+  ],
+  "anomaly_alerts": [
+    {
+      "window_start": "2026-03-09T14:14:00",
+      "window_end": "2026-03-09T14:16:00",
+      "total_sessions": 10,
+      "page_view_sessions": 10,
+      "add_to_cart_sessions": 6,
+      "purchase_sessions": 1,
+      "page_to_purchase_rate": 10.0,
+      "cart_to_purchase_rate": 16.6667,
+      "baseline_window_count": 12,
+      "baseline_session_mean": 4,
+      "baseline_session_stddev": 0.7071,
+      "traffic_z_score": 8.4854,
+      "alert_types": [
+        "traffic_spike",
+        "low_purchase_conversion",
+        "cart_abandonment_risk"
+      ],
+      "alert_count": 3,
+      "severity": "high",
+      "anomaly_model": "zscore_vs_recent_hour"
+    }
+  ],
+  "report_json_path": "docs/reports/streaming_demo_result_20260309.json",
+  "report_markdown_path": "docs/reports/streaming_demo_result_20260309.md"
+}

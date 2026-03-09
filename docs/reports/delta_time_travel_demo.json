@@ -1,0 +1,355 @@
+{
+  "report_type": "delta_demo",
+  "generated_at_utc": "2026-03-09T05:17:59.769938+00:00",
+  "target_path": "data/processed/delta/day4/time_travel_orders_demo",
+  "version_zero": {
+    "version": 0,
+    "row_count": 3,
+    "schema": [
+      {
+        "name": "amount",
+        "type": "double",
+        "nullable": true
+      },
+      {
+        "name": "event_date",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "order_id",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "user_id",
+        "type": "string",
+        "nullable": true
+      }
+    ],
+    "preview_rows": [
+      {
+        "amount": 42.0,
+        "event_date": "2026-03-09",
+        "order_id": "ord-002",
+        "user_id": "user-02"
+      },
+      {
+        "amount": 15.0,
+        "event_date": "2026-03-09",
+        "order_id": "ord-003",
+        "user_id": "user-03"
+      },
+      {
+        "amount": 24.5,
+        "event_date": "2026-03-09",
+        "order_id": "ord-001",
+        "user_id": "user-01"
+      }
+    ]
+  },
+  "latest": {
+    "version": 3,
+    "row_count": 5,
+    "schema": [
+      {
+        "name": "amount",
+        "type": "double",
+        "nullable": true
+      },
+      {
+        "name": "event_date",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "order_id",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "user_id",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "channel",
+        "type": "string",
+        "nullable": true
+      }
+    ],
+    "preview_rows": [
+      {
+        "amount": 27.5,
+        "event_date": "2026-03-10",
+        "order_id": "ord-005",
+        "user_id": "user-05",
+        "channel": "email"
+      },
+      {
+        "amount": 31.0,
+        "event_date": "2026-03-10",
+        "order_id": "ord-004",
+        "user_id": "user-04",
+        "channel": "ads"
+      },
+      {
+        "amount": 42.0,
+        "event_date": "2026-03-09",
+        "order_id": "ord-002",
+        "user_id": "user-02",
+        "channel": null
+      },
+      {
+        "amount": 15.0,
+        "event_date": "2026-03-09",
+        "order_id": "ord-003",
+        "user_id": "user-03",
+        "channel": null
+      },
+      {
+        "amount": 24.5,
+        "event_date": "2026-03-09",
+        "order_id": "ord-001",
+        "user_id": "user-01",
+        "channel": null
+      }
+    ]
+  },
+  "history": [
+    {
+      "version": 0,
+      "timestamp": "2026-03-09T14:17:48.293000",
+      "userId": null,
+      "userName": null,
+      "operation": "WRITE",
+      "operationParameters": {
+        "mode": "Overwrite",
+        "partitionBy": "[]"
+      },
+      "job": null,
+      "notebook": null,
+      "clusterId": null,
+      "readVersion": null,
+      "isolationLevel": "Serializable",
+      "isBlindAppend": false,
+      "operationMetrics": {
+        "numOutputRows": "3",
+        "numOutputBytes": "2659",
+        "numFiles": "2"
+      },
+      "userMetadata": null,
+      "engineInfo": "Apache-Spark/3.5.8 Delta-Lake/3.3.2"
+    },
+    {
+      "version": 1,
+      "timestamp": "2026-03-09T14:17:53.227000",
+      "userId": null,
+      "userName": null,
+      "operation": "WRITE",
+      "operationParameters": {
+        "mode": "Append",
+        "partitionBy": "[]"
+      },
+      "job": null,
+      "notebook": null,
+      "clusterId": null,
+      "readVersion": 0,
+      "isolationLevel": "Serializable",
+      "isBlindAppend": true,
+      "operationMetrics": {
+        "numOutputRows": "2",
+        "numOutputBytes": "3114",
+        "numFiles": "2"
+      },
+      "userMetadata": null,
+      "engineInfo": "Apache-Spark/3.5.8 Delta-Lake/3.3.2"
+    },
+    {
+      "version": 2,
+      "timestamp": "2026-03-09T14:17:55.628000",
+      "userId": null,
+      "userName": null,
+      "operation": "OPTIMIZE",
+      "operationParameters": {
+        "predicate": "[]",
+        "auto": "false",
+        "zOrderBy": "[]",
+        "clusterBy": "[]"
+      },
+      "job": null,
+      "notebook": null,
+      "clusterId": null,
+      "readVersion": 1,
+      "isolationLevel": "SnapshotIsolation",
+      "isBlindAppend": false,
+      "operationMetrics": {
+        "numRemovedBytes": "5773",
+        "p50FileSize": "1619",
+        "p25FileSize": "1619",
+        "numAddedFiles": "1",
+        "minFileSize": "1619",
+        "p75FileSize": "1619",
+        "numDeletionVectorsRemoved": "0",
+        "numAddedBytes": "1619",
+        "maxFileSize": "1619",
+        "numRemovedFiles": "4"
+      },
+      "userMetadata": null,
+      "engineInfo": "Apache-Spark/3.5.8 Delta-Lake/3.3.2"
+    },
+    {
+      "version": 3,
+      "timestamp": "2026-03-09T14:17:58.335000",
+      "userId": null,
+      "userName": null,
+      "operation": "OPTIMIZE",
+      "operationParameters": {
+        "predicate": "[]",
+        "auto": "false",
+        "zOrderBy": "[\"event_date\",\"channel\"]",
+        "clusterBy": "[]"
+      },
+      "job": null,
+      "notebook": null,
+      "clusterId": null,
+      "readVersion": 2,
+      "isolationLevel": "SnapshotIsolation",
+      "isBlindAppend": false,
+      "operationMetrics": {
+        "numRemovedBytes": "1619",
+        "p50FileSize": "1619",
+        "p25FileSize": "1619",
+        "numAddedFiles": "1",
+        "minFileSize": "1619",
+        "p75FileSize": "1619",
+        "numDeletionVectorsRemoved": "0",
+        "numAddedBytes": "1619",
+        "maxFileSize": "1619",
+        "numRemovedFiles": "1"
+      },
+      "userMetadata": null,
+      "engineInfo": "Apache-Spark/3.5.8 Delta-Lake/3.3.2"
+    }
+  ],
+  "schema_evolution": {
+    "added_columns": [
+      "channel"
+    ],
+    "removed_columns": []
+  },
+  "optimization": {
+    "supported": true,
+    "executed": true,
+    "skipped": false,
+    "zorder_columns": [
+      "event_date",
+      "channel"
+    ],
+    "compaction_metrics": [
+      {
+        "path": "file:/mnt/e/프로젝트/부족한 프로젝트 시작/4_실시간 로그 분석/data/processed/delta/day4/time_travel_orders_demo",
+        "metrics": {
+          "numFilesAdded": 1,
+          "numFilesRemoved": 4,
+          "filesAdded": {
+            "min": 1619,
+            "max": 1619,
+            "avg": 1619.0,
+            "totalFiles": 1,
+            "totalSize": 1619
+          },
+          "filesRemoved": {
+            "min": 1315,
+            "max": 1564,
+            "avg": 1443.25,
+            "totalFiles": 4,
+            "totalSize": 5773
+          },
+          "partitionsOptimized": 1,
+          "zOrderStats": null,
+          "clusteringStats": null,
+          "numBins": 1,
+          "numBatches": 1,
+          "totalConsideredFiles": 4,
+          "totalFilesSkipped": 0,
+          "preserveInsertionOrder": false,
+          "numFilesSkippedToReduceWriteAmplification": 0,
+          "numBytesSkippedToReduceWriteAmplification": 0,
+          "startTimeMs": 1773033477451,
+          "endTimeMs": 0,
+          "totalClusterParallelism": 2,
+          "totalScheduledTasks": 0,
+          "autoCompactParallelismStats": null,
+          "deletionVectorStats": null,
+          "numTableColumns": 5,
+          "numTableColumnsWithStats": 5
+        }
+      }
+    ],
+    "zorder_metrics": [
+      {
+        "path": "file:/mnt/e/프로젝트/부족한 프로젝트 시작/4_실시간 로그 분석/data/processed/delta/day4/time_travel_orders_demo",
+        "metrics": {
+          "numFilesAdded": 1,
+          "numFilesRemoved": 1,
+          "filesAdded": {
+            "min": 1619,
+            "max": 1619,
+            "avg": 1619.0,
+            "totalFiles": 1,
+            "totalSize": 1619
+          },
+          "filesRemoved": {
+            "min": 1619,
+            "max": 1619,
+            "avg": 1619.0,
+            "totalFiles": 1,
+            "totalSize": 1619
+          },
+          "partitionsOptimized": 1,
+          "zOrderStats": {
+            "strategyName": "all",
+            "inputCubeFiles": {
+              "num": 0,
+              "size": 0
+            },
+            "inputOtherFiles": {
+              "num": 1,
+              "size": 1619
+            },
+            "inputNumCubes": 0,
+            "mergedFiles": {
+              "num": 1,
+              "size": 1619
+            },
+            "numOutputCubes": 1,
+            "mergedNumCubes": null
+          },
+          "clusteringStats": null,
+          "numBins": 1,
+          "numBatches": 1,
+          "totalConsideredFiles": 1,
+          "totalFilesSkipped": 0,
+          "preserveInsertionOrder": false,
+          "numFilesSkippedToReduceWriteAmplification": 0,
+          "numBytesSkippedToReduceWriteAmplification": 0,
+          "startTimeMs": 1773033477465,
+          "endTimeMs": 0,
+          "totalClusterParallelism": 2,
+          "totalScheduledTasks": 0,
+          "autoCompactParallelismStats": null,
+          "deletionVectorStats": null,
+          "numTableColumns": 5,
+          "numTableColumnsWithStats": 5
+        }
+      }
+    ]
+  },
+  "time_travel_example": {
+    "version_as_of": 0,
+    "latest_version": 3,
+    "version_zero_row_count": 3,
+    "latest_row_count": 5
+  }
+}

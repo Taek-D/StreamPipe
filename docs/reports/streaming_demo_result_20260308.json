@@ -1,0 +1,78 @@
+{
+  "config": {
+    "topic": "clickstream.events",
+    "query_name": "clickstream_demo",
+    "page_view_sessions": 10,
+    "add_to_cart_sessions": 6,
+    "purchase_sessions": 1
+  },
+  "event_metrics": [
+    {
+      "window_start": "2026-03-08 23:20:00",
+      "window_end": "2026-03-08 23:22:00",
+      "event_type": "add_to_cart",
+      "event_count": 6,
+      "approx_unique_users": 6,
+      "approx_unique_sessions": 6
+    },
+    {
+      "window_start": "2026-03-08 23:20:00",
+      "window_end": "2026-03-08 23:22:00",
+      "event_type": "page_view",
+      "event_count": 10,
+      "approx_unique_users": 10,
+      "approx_unique_sessions": 10
+    },
+    {
+      "window_start": "2026-03-08 23:20:00",
+      "window_end": "2026-03-08 23:22:00",
+      "event_type": "product_view",
+      "event_count": 10,
+      "approx_unique_users": 10,
+      "approx_unique_sessions": 10
+    },
+    {
+      "window_start": "2026-03-08 23:20:00",
+      "window_end": "2026-03-08 23:22:00",
+      "event_type": "purchase",
+      "event_count": 1,
+      "approx_unique_users": 1,
+      "approx_unique_sessions": 1
+    }
+  ],
+  "funnel_metrics": [
+    {
+      "window_start": "2026-03-08 23:20:00",
+      "window_end": "2026-03-08 23:22:00",
+      "total_sessions": 10,
+      "total_users": 10,
+      "page_view_sessions": 10,
+      "product_view_sessions": 10,
+      "add_to_cart_sessions": 6,
+      "purchase_sessions": 1,
+      "page_to_product_rate": 100.0,
+      "product_to_cart_rate": 60.0,
+      "cart_to_purchase_rate": 16.666666666666664,
+      "page_to_purchase_rate": 10.0
+    }
+  ],
+  "anomaly_alerts": [
+    {
+      "window_start": "2026-03-08 23:20:00",
+      "window_end": "2026-03-08 23:22:00",
+      "total_sessions": 10,
+      "page_view_sessions": 10,
+      "add_to_cart_sessions": 6,
+      "purchase_sessions": 1,
+      "page_to_purchase_rate": 10.0,
+      "cart_to_purchase_rate": 16.666666666666664,
+      "alert_types": [
+        "traffic_spike",
+        "low_purchase_conversion",
+        "cart_abandonment_risk"
+      ],
+      "alert_count": 3,
+      "severity": "high"
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.coverage
+.venv/
+.env
+
+# Jupyter / Streamlit
+.ipynb_checkpoints/
+.streamlit/
+
+# Project runtime
+.omx/
+.omc/
+logs/
+.ivy2/
+NUL
+
+# Data artifacts
+data/raw/**
+!data/raw/.gitkeep
+data/processed/**
+!data/processed/.gitkeep
+data/checkpoints/**
+!data/checkpoints/.gitkeep
+data/benchmarks/**
+!data/benchmarks/.gitkeep
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+.uv-cache/
+.jdk/
+.java-home/
